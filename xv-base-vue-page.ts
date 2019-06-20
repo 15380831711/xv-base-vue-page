@@ -5,7 +5,7 @@ import { AppServiceProvider } from "@/providers/app-service/app-service";
 @Component({
     components: {}
 })
-export default class XvBaseVuePagePage extends Vue {
+export default class {{XV_PAGE_NAME}} extends Vue {
     appService = new AppServiceProvider();
     alertService = new AlertServiceProvider();
 
