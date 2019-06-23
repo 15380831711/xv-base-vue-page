@@ -10,7 +10,7 @@ export default class {{XV_PAGE_NAME}} extends Vue {
     alertService = new AlertServiceProvider();
 
     data = {
-        title: "xv 基础框架 （VUE + Element ui）"
+        title: "xv 基础框架 （VUE + ...）"
     };
 
     created() {
@@ -31,7 +31,7 @@ export default class {{XV_PAGE_NAME}} extends Vue {
     }
 
     alert() {
-        this.alertService.alert("操作成功", "success");
+        this.alertService.alert("操作成功");
     }
 
     confirm() {

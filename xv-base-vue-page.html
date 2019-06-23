@@ -4,8 +4,8 @@
         <el-button @click="push('LoginPage')">页面跳转</el-button>
         <el-button type="success" @click="alert()">普通弹框</el-button>
         <el-button type="primary" @click="confirm()">确认取消</el-button>
-        <el-button type="info" @click="alertService.showLoading('玩命加载中...',1000)">Loading</el-button>
-        <el-button type="warning" @click="alertService.message('提示消息','warning')">消息提示</el-button>
-        <el-button type="danger" @click="alertService.notification('通知消息','error')">显示通知</el-button>
+        <el-button type="info" @click="alertService.showLoading('玩命加载中...')">Loading</el-button>
+        <el-button type="warning" @click="alertService.message('提示消息')">消息提示</el-button>
+        <el-button type="danger" @click="alertService.notification('通知消息')">显示通知</el-button>
     </el-row>
 </div>
