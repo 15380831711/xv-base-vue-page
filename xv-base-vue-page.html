@@ -1,11 +1,14 @@
 <div id="appPage">
-    <el-alert :title="data.title" type="info"> </el-alert>
-    <el-row>
-        <el-button @click="push('LoginPage')">页面跳转</el-button>
-        <el-button type="success" @click="alert()">普通弹框</el-button>
-        <el-button type="primary" @click="confirm()">确认取消</el-button>
-        <el-button type="info" @click="alertService.showLoading('玩命加载中...')">Loading</el-button>
-        <el-button type="warning" @click="alertService.message('提示消息')">消息提示</el-button>
-        <el-button type="danger" @click="alertService.notification('通知消息')">显示通知</el-button>
-    </el-row>
+    <h3>{{ data.title }}</h3>
+    <a @click="changeDisplayed()">点击{{ data.displayed == true ? "隐藏" : "显示" }}</a>
+    <transition name="fade">
+        <ol v-if="data.displayed == true">
+            <li @click="push('LoginPage')">页面跳转</li>
+            <li type="success" @click="alert()">普通弹框</li>
+            <li type="primary" @click="confirm()">确认取消</li>
+            <li type="info" @click="alertService.showLoading('玩命加载中...')">Loading</li>
+            <li type="warning" @click="alertService.message('提示消息')">消息提示</li>
+            <li type="danger" @click="alertService.notification('通知消息')">显示通知</li>
+        </ol>
+    </transition>
 </div>

@@ -10,8 +10,16 @@ export default class {{XV_PAGE_NAME}} extends Vue {
     alertService = new AlertServiceProvider();
 
     data = {
-        title: "xv 基础框架 （VUE + ...）"
+        title: "xv 基础框架 （VUE + ...）",
+        displayed: false
     };
+
+    /**
+     * 改变显示或隐藏状态
+     */
+    changeDisplayed(){
+        this.data.displayed = !this.data.displayed;
+    }
 
     created() {
         console.log("page created");
@@ -42,8 +50,7 @@ export default class {{XV_PAGE_NAME}} extends Vue {
             },
             () => {
                 this.alertService.message("你点了取消。");
-            },
-            "warning"
+            }
         );
     }
 
