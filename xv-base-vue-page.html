@@ -1,18 +1,16 @@
-<div id="appPage" class="page js_show">
-    <div class="page__bd">
-        <tabs :selectedIndex="1">
-            <h3 class="page__title">{{ data.title }}</h3>
-            <a @click="changeDisplayed()">点击{{ data.displayed == true ? "隐藏" : "显示" }}</a>
-            <transition name="fade">
-                <ol v-if="data.displayed == true">
-                    <li @click="push('LoginPage')">页面跳转</li>
-                    <li type="success" @click="alert()">普通弹框</li>
-                    <li type="primary" @click="confirm()">确认取消</li>
-                    <li type="info" @click="alertService.showLoading('玩命加载中...')">Loading</li>
-                    <li type="warning" @click="alertService.message('提示消息')">消息提示</li>
-                    <li type="danger" @click="alertService.notification('通知消息')">显示通知</li>
-                </ol>
-            </transition>
-        </tabs>
-    </div>
+<div id="appPage">
+    <xv-header>{{ data.title }}</xv-header>
+    <xv-content>
+        <a @click="changeDisplayed()">点击{{ data.displayed == true ? "隐藏" : "显示" }}</a>
+        <transition name="fade">
+            <ol v-if="data.displayed == true">
+                <li @click="push('LoginPage')">页面跳转</li>
+                <li type="success" @click="alert()">普通弹框</li>
+                <li type="primary" @click="confirm()">确认取消</li>
+                <li type="info" @click="alertService.showLoading('玩命加载中...')">Loading</li>
+                <li type="warning" @click="alertService.message('提示消息')">消息提示</li>
+                <li type="danger" @click="alertService.notification('通知消息')">显示通知</li>
+            </ol>
+        </transition>
+    </xv-content>
 </div>
