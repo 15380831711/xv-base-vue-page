@@ -1,6 +1,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import { AlertServiceProvider } from "@/providers/alert-service/alert-service";
 import { AppServiceProvider } from "@/providers/app-service/app-service";
+import { AppModule } from "@/store/modules/app";
 
 @Component({
     components: {}
@@ -10,7 +11,7 @@ export default class {{XV_PAGE_NAME}} extends Vue {
     alertService = new AlertServiceProvider();
 
     data = {
-        title: "xv 基础框架 （VUE + ...）",
+        title: "标题",
         displayed: false
     };
 
@@ -22,20 +23,12 @@ export default class {{XV_PAGE_NAME}} extends Vue {
     }
 
     created() {
-        console.log("page created");
+        AppModule.setTitle(this.data.title);
     }
 
     mounted() {
         console.log("page mounted");
         // this.getData();
-    }
-
-    push(url: any) {
-        this.$router.push(url);
-    }
-
-    pop() {
-        this.$router.go(-1);
     }
 
     alert() {
