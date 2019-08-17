@@ -30,6 +30,14 @@ export default class {{XV_PAGE_NAME}} extends Vue {
         console.log("page mounted");
         // this.getData();
     }
+    
+    activated() {
+        console.log("activated");
+    }
+
+    deactivated() {
+        console.log("deactivated");
+    }
 
     alert() {
         this.alertService.alert("操作成功");
